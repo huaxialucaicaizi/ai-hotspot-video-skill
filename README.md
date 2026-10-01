@@ -1,3 +1,54 @@
+# AI 热点视频 Skills
+
+本仓库保存两套可并存的 Agent Skills。本次新增 `edit-tech-broll` 动效修订版，保留原有 `edit-tech-explainer` 的入口与全部配套文件。
+
+| Skill | 重点 | 仓库位置 |
+| --- | --- | --- |
+| edit-tech-explainer | AI 热点口播理解、参考拆解、真实素材与解释页；默认上下分屏 | 根目录 [SKILL.md](SKILL.md)，配套 `agents/`、`assets/`、`references/` |
+| edit-tech-broll | 观点型口播的语义动效、三种构图、固定画布进度条与跨工具交接 | [skills/edit-tech-broll/](skills/edit-tech-broll/README.md) |
+
+两者均提供制作方法，**不自带剪辑或渲染引擎**。新 Skill 保留浅色蓝紫默认值；视觉原创性的进一步改进留待后续单独处理。
+
+## 新 Skill 安装与调用
+
+将完整的 `skills/edit-tech-broll/` 文件夹复制到对应目录，保留内部相对位置：
+
+| 工具 | 项目内目录 | 个人目录 | 调用 |
+| --- | --- | --- | --- |
+| Codex | `.agents/skills/edit-tech-broll/` | `~/.agents/skills/edit-tech-broll/` | `$edit-tech-broll` |
+| Claude Code | `.claude/skills/edit-tech-broll/` | `~/.claude/skills/edit-tech-broll/` | `/edit-tech-broll` |
+
+完整说明见 [INSTALL.md](skills/edit-tech-broll/INSTALL.md)。也可让能够读取本地文件的 Agent 直接读取新 Skill 的 `SKILL.md`。
+
+```text
+使用 $edit-tech-broll 处理我的观点口播，保留原声、字幕和观点顺序。
+沿用浅色蓝紫风格，按语义选择人物全屏、B-roll 全屏＋人物圆窗、
+上下分屏；需要动效的图解随原声展开，进度条固定在画布顶部。
+本轮先交付静态分镜和动效设计，确认后再制作样片。
+```
+
+Claude Code 将首行调用改为 `/edit-tech-broll`，其余要求可沿用。
+
+## 剪映交接与验证范围
+
+通用素材包包含实际媒体、SRT、CSV/JSON 时间码编辑说明，需要在剪映中人工导入和摆放。**通用包不是已验证的剪映原生工程，自定义 JSON 也不是剪映或 CapCut 草稿格式。** 原生工程须在记录的操作系统、软件和适配器版本上完成开档、重连、播放、导出和重开验证后才能这样命名。
+
+校验脚本使用 Python 3.9+ 标准库，无第三方 Python 依赖；转写、录屏、图像制作和视频合成依赖实际可用的外部工具。脚本通过只证明清单结构、路径和时间约定，不证明素材授权、事实准确、动效效果或剪映兼容。
+
+```sh
+cd skills/edit-tech-broll
+python3 scripts/test_validator.py
+python3 scripts/validate_manifest.py /path/to/project/edit-manifest.json --check-files --strict
+```
+
+示例模板故意保留缺素材状态，严格检查应失败；不要删除检查或伪造素材状态。包内参考拆解和样片验证是作者留下的历史记录，本次 GitHub 存档未重新观看或验证相关视频。四个平台的手机界面遮挡、软件实际安装与剪映原生工程兼容仍需另行实测。
+
+新版本说明：[README](skills/edit-tech-broll/README.md) · [语义动效](skills/edit-tech-broll/references/semantic-motion.md) · [剪映交接](skills/edit-tech-broll/references/jianying-handoff.md) · [包验证记录](skills/edit-tech-broll/VALIDATION.md)。
+
+---
+
+以下保留原 `edit-tech-explainer` 的说明。
+
 # AI 热点口播视频 · Tech Explainer
 
 **把你的 AI 热点口播，做成观众看得懂、画面有依据、风格统一的视频。**
@@ -170,3 +221,4 @@
 | `references/quality-check.md` | 成片验收清单 |
 
 方法参考：[Hypit](https://github.com/hypit-ai/hypit)。
+
