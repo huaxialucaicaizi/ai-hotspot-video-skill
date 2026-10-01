@@ -1,0 +1,2 @@
+motion_id,segment_id,layer,target,action,trigger_phrase,start_s,end_s,duration_s,state_from,state_to,easing,attention_objective,settled_hold_s,rendered_file,review_timepoints,review_result
+M01,,broll,填写具体节点或真实证据区域,reveal,填写实际原声触发短语,,,,填写元素出现前状态,填写稳定后的状态,ease_out,填写观众此刻该看懂的关系,,,,planning

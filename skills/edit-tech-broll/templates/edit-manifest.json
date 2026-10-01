@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "project_title": "12秒格式演示，请替换为真实项目",
+  "source": {
+    "path": "source/original.mp4",
+    "duration_s": 12,
+    "fps": 30,
+    "width": 682,
+    "height": 512,
+    "audio_policy": "preserve_timing",
+    "burned_captions": true
+  },
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "add_caption_overlay": false
+  },
+  "assets": [
+    {
+      "id": "graph-01",
+      "path": "media/graph-01.png",
+      "type": "image",
+      "source_url": "",
+      "origin": "self_made",
+      "verification": "illustration",
+      "status": "missing",
+      "editable_source": "editable/graph-01.svg",
+      "rights_note": "格式演示：尚未制作媒体"
+    }
+  ],
+  "segments": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 4,
+      "trigger_phrase": "格式示例，不是实际原声",
+      "visual_type": "presenter",
+      "asset": null,
+      "claim_status": "author_analysis",
+      "sources": [],
+      "layout": "presenter_full",
+      "presenter_visible": true,
+      "note": "换成真实原声与对齐时间"
+    },
+    {
+      "id": "S02",
+      "start": 4,
+      "end": 8,
+      "trigger_phrase": "格式示例，不是实际原声",
+      "visual_type": "relationship_graph",
+      "asset": "graph-01",
+      "claim_status": "author_analysis",
+      "sources": [],
+      "layout": "split",
+      "presenter_visible": true,
+      "note": "示意图解释原声关系；此资产目前不存在"
+    },
+    {
+      "id": "S03",
+      "start": 8,
+      "end": 12,
+      "trigger_phrase": "格式示例，不是实际原声",
+      "visual_type": "relationship_graph",
+      "asset": "graph-01",
+      "claim_status": "author_analysis",
+      "sources": [],
+      "layout": "broll_full_circle",
+      "presenter_visible": true,
+      "note": "示例：B-roll全屏，圆形人物窗避开字幕与图示；保留原声",
+      "hold_reason": "示例：保持前段建立的完整关系供观众读完；实际项目应据原声决定"
+    }
+  ],
+  "progress_bar": {
+    "enabled": true,
+    "mode": "whole_video",
+    "placement": "fixed_canvas",
+    "anchor": "top",
+    "note": "本片编辑建议，非平台官方安全框；发布前需各平台预览校准",
+    "reference_canvas": {
+      "width": 1080,
+      "height": 1920
+    },
+    "chapter": {
+      "x": 120,
+      "y": 300,
+      "font_px": 32
+    },
+    "line": {
+      "x1": 120,
+      "x2": 900,
+      "y": 350,
+      "height": 6
+    },
+    "content_top": 410
+  },
+  "motion_requirement": "semantic",
+  "motions": [
+    {
+      "id": "M01",
+      "segment_id": "S02",
+      "layer": "broll",
+      "target": "graph-01.input-node",
+      "action": "reveal",
+      "trigger_phrase": "格式示例：需真实原声对齐",
+      "start": 4.2,
+      "end": 4.65,
+      "duration_s": 0.45,
+      "state_from": {
+        "opacity": 0,
+        "offset_y": 18
+      },
+      "state_to": {
+        "opacity": 1,
+        "offset_y": 0
+      },
+      "easing": "ease_out",
+      "attention_objective": "先识别输入，避免一次读完整图"
+    },
+    {
+      "id": "M02",
+      "segment_id": "S02",
+      "layer": "broll",
+      "target": "graph-01.arrow",
+      "action": "draw_path",
+      "trigger_phrase": "格式示例：需真实原声对齐",
+      "start": 5.0,
+      "end": 5.7,
+      "duration_s": 0.7,
+      "state_from": {
+        "draw_fraction": 0
+      },
+      "state_to": {
+        "draw_fraction": 1
+      },
+      "easing": "ease_in_out",
+      "attention_objective": "沿连线理解处理顺序"
+    }
+  ]
+}
