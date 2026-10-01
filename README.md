@@ -8,8 +8,8 @@
 
 | Skill | 适合的任务 | 画面与交付重点 | 入口 |
 | --- | --- | --- | --- |
-| `edit-tech-explainer` | 产品走红、功能更新、工具对比与热点解释；参考博主拆解 | 真实素材、解释页与策略页；默认 9:16 上下分屏 | 根目录 [SKILL.md](SKILL.md) · [完整介绍](README-explainer.md) |
-| `edit-tech-broll` | 希望按观点组织 B-roll、让关系图随原声展开的口播 | 语义动效；人物全屏、B-roll 全屏＋人物圆窗、上下分屏；固定画布进度条与剪映交接 | [SKILL.md](skills/edit-tech-broll/SKILL.md) · [完整介绍](skills/edit-tech-broll/README.md) |
+| `edit-tech-explainer` | 产品走红、功能更新、工具对比与热点解释；参考博主拆解 | 真实素材、解释页与策略页；默认 9:16 分屏为上方口播 A-roll、下方 B-roll | 根目录 [SKILL.md](SKILL.md) · [完整介绍](README-explainer.md) |
+| `edit-tech-broll` | 希望按观点组织 B-roll、让关系图随原声展开的口播 | 语义动效；人物全屏、B-roll 全屏＋人物圆窗、上 A-roll 下 B-roll；固定画布进度条与剪映交接 | [SKILL.md](skills/edit-tech-broll/SKILL.md) · [完整介绍](skills/edit-tech-broll/README.md) |
 
 需要语义动效与三种构图时，显式调用 `edit-tech-broll`；使用原有热点解释流程时，调用 `edit-tech-explainer`。两套可以分别安装，旧版入口与配套文件完整保留。
 
