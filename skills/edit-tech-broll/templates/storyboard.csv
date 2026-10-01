@@ -1,0 +1,2 @@
+id,start_s,end_s,narration,claim,role,claim_status,visual_purpose,visual_type,asset_id,trigger_phrase,layout,action_or_highlight,readability_check,sources,status
+S01,,,填写完整原声而非重写,填写本段唯一主张,claim,unverified,emphasize,presenter,,填写实际触发短语,presenter,保留作者表情,时间码须由原片对齐,,planning
